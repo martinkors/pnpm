@@ -53,6 +53,7 @@ export interface StrictInstallOptions {
   preferWorkspacePackages: boolean
   preserveWorkspaceProtocol: boolean
   saveCatalogName?: string
+  useCatalog?: 'always' | 'prefer' | 'manual'
   scriptsPrependNodePath: boolean | 'warn-only'
   scriptShell?: string
   shellEmulator: boolean
@@ -237,6 +238,7 @@ const defaults = (opts: InstallOptions): StrictInstallOptions => {
       process.platform === 'cygwin' ||
       !process.setgid ||
       process.getuid?.() !== 0,
+    useCatalog: 'manual',
     useLockfile: true,
     saveLockfile: true,
     useGitBranchLockfile: false,

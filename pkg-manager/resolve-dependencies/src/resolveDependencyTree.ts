@@ -103,6 +103,7 @@ export interface ResolveDependenciesOptions {
   allowedDeprecatedVersions: AllowedDeprecatedVersions
   allowUnusedPatches: boolean
   catalogs?: Catalogs
+  useCatalog?: 'always' | 'prefer' | 'manual'
   currentLockfile: LockfileObject
   dedupePeerDependents?: boolean
   dryRun: boolean
